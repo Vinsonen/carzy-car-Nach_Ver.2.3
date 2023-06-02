@@ -1,0 +1,11 @@
+﻿  IF.c
+c:\users\86187\desktop\carsimself_w2.5 完整版\if\if\if.c(5): warning C4142: "leistung_now": 类型的良性重定义
+  c:\users\86187\desktop\carsimself_w2.5 完整版\if\if\if.h(6): note: 参见“leistung_now”的声明
+c:\users\86187\desktop\carsimself_w2.5 完整版\if\if\if.c(17): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+  myfunktion.c
+c:\users\86187\desktop\carsimself_w2.5 完整版\if\if\myfunktion.c(23): warning C4244: “函数”: 从“double”转换到“int”，可能丢失数据
+c:\users\86187\desktop\carsimself_w2.5 完整版\if\if\myfunktion.c(52): warning C4244: “函数”: 从“double”转换到“int”，可能丢失数据
+c:\users\86187\desktop\carsimself_w2.5 完整版\if\if\myfunktion.c(116): warning C4013: “abs”未定义；假设外部返回 int
+  正在生成代码...
+    正在创建库 C:\Users\86187\Desktop\CarSimself_W2.5 完整版\IF\x64\Debug\IF.lib 和对象 C:\Users\86187\Desktop\CarSimself_W2.5 完整版\IF\x64\Debug\IF.exp
+  IF.vcxproj -> C:\Users\86187\Desktop\CarSimself_W2.5 完整版\IF\x64\Debug\IF.dll
