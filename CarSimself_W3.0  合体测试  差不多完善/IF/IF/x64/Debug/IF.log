@@ -1,0 +1,9 @@
+﻿  IF.c
+C:\Users\Vinson\Desktop\毕业论文\CarSimself_W2.8  合体测试\IF\IF\IF.c(5,19): warning C4142: "leistung_now": 类型的良性重定义
+C:\Users\Vinson\Desktop\毕业论文\CarSimself_W2.8  合体测试\IF\IF\IF.h(6): message : 参见“leistung_now”的声明
+C:\Users\Vinson\Desktop\毕业论文\CarSimself_W2.8  合体测试\IF\IF\IF.c(17,17): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+  myfunktion.c
+C:\Users\Vinson\Desktop\毕业论文\CarSimself_W2.8  合体测试\IF\IF\myfunktion.c(165,8): warning C4013: “abs”未定义；假设外部返回 int
+  正在生成代码...
+    正在创建库 C:\Users\Vinson\Desktop\毕业论文\CarSimself_W2.8  合体测试\IF\x64\Debug\IF.lib 和对象 C:\Users\Vinson\Desktop\毕业论文\CarSimself_W2.8  合体测试\IF\x64\Debug\IF.exp
+  IF.vcxproj -> C:\Users\Vinson\Desktop\毕业论文\CarSimself_W2.8  合体测试\IF\x64\Debug\IF.dll
