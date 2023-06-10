@@ -215,11 +215,11 @@ class Car:
 
             # slower speed
             if angle_theta < 30:
-                self.speed = self.speed * 0.9
+                self.speed = self.speed * 0.6
             elif angle_theta < 60:
-                self.speed = self.speed * 0.8
+                self.speed = self.speed * 0.4
             else:
-                self.speed = self.speed * 0.7
+                self.speed = self.speed * 0.2
             self.speed_slowed = True
 
             k0 = -1
