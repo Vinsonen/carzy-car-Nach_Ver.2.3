@@ -1,0 +1,5 @@
+﻿  IF.c
+c:\users\86187\desktop\毕业设计\if\if\if.c(3): error C2375: “fahr”: 重定义；不同的链接
+  c:\users\86187\desktop\毕业设计\if\if\if.h(9): note: 参见“fahr”的声明
+c:\users\86187\desktop\毕业设计\if\if\if.c(6): error C2375: “getfwert”: 重定义；不同的链接
+  c:\users\86187\desktop\毕业设计\if\if\if.h(10): note: 参见“getfwert”的声明
