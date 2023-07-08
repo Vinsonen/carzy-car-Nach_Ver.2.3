@@ -1,0 +1,28 @@
+    def Geschwindigkeit(self, power):
+        speed = sim_to_real(self.speed)
+        turnback = False
+        if power < 0:
+            power = (-1)*power
+            turnback = True
+        if power == 0:
+            speed = 0
+        else:
+            if self.radangle < 5:
+                maxspeed = -0.0496 * (
+                        power ** 2) + 9.008 * power + 31.8089  # max(0 , self.speed + beschleunigungänderung)
+                maxspeed /= 100
+            else:
+                maxspeed = -81562 * (power ** (-2.47)) + 215.5123
+                maxspeed /= 100
+
+            beschleunigung = -2.179 * speed + 0.155 * power * power + 7.015 * power  # fahr的范围为18到50
+            beschleunigung /= 100
+
+            if abs(speed + beschleunigung * 0.01) <= abs(maxspeed):
+                speed += beschleunigung * 0.01
+
+        sim_speed = real_to_sim(speed)
+        if turnback:
+            return (-1)*sim_speed
+        else:
+            return sim_speed
