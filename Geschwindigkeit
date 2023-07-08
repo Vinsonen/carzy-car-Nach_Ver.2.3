@@ -3,6 +3,7 @@
         turnback = False
         if power < 0:
             power = (-1)*power
+            speed = (-1)*speed
             turnback = True
         if power == 0:
             speed = 0
