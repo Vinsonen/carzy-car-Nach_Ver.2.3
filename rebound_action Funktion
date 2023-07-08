@@ -1,0 +1,66 @@
+    def rebound_action(self, game_map, point0, nr):
+        # self.speed = 1
+        # pygame.draw.circle(game_map, (100, 0, 255), point0, 1)
+        if nr in [1, 2]:
+            x0 = point0[0]
+            y0 = point0[1]
+            # point1 = [0, y0]
+
+            radius = 15
+            # Die andere Kollisionspunkte zwischen der Rennstrecke und den Wänden werden durch Farbunterschiede identifiziert.
+            for vi in range(0, 370, 10):
+                angle = math.radians(vi)
+                x1 = x0 + radius * math.cos(angle)
+                y1 = y0 + radius * math.sin(angle)
+                x2 = x0 + radius * math.cos(angle + math.radians(15))
+                y2 = y0 + radius * math.sin(angle + math.radians(15))
+
+                point1 = [int(x1), int(y1)]
+
+                if game_map.get_at([int(x1), int(y1)]) == BORDER_COLOR and \
+                   game_map.get_at([int(x2), int(y2)]) != BORDER_COLOR:
+                    point1 = [int(x1), int(y1)]
+
+                    # Berechnen Sie die Steigung zwischen den beiden Punkten, die Steigung der Kollision
+                    # m = (point1[1] - point0[1]) / (point1[0] - point0[0])
+                    # pygame.draw.line(game_map, (100, 180, 180), (0, point1[1] - m * point1[0]),
+                    #                  (WIDTH, point0[1] + m * (WIDTH - point0[0])), 3)
+                    break
+            # pygame.draw.circle(game_map, (100, 100, 100), (x1, y1), 1)
+
+            # Berechnung der Vektoren für den Einfallswinkel und die reflektierten Flächen
+            theta = np.radians(self.carangle)
+            vi = np.array([math.cos(theta), math.sin(theta)])
+            vw = np.array([point1[0] - point0[0], point1[1] - point0[1]])    # np.array(point1) - np.array(point)
+            cosine = np.dot(vw, vi) / (np.linalg.norm(vw) * np.linalg.norm(vi))
+            angle_theta = np.degrees(np.arccos(cosine))
+
+            if angle_theta > 90:
+                angle_theta = 180 - angle_theta
+
+            # slower speed
+            if angle_theta == 0:
+                self.speed = self.speed * 1
+            elif angle_theta < 30:
+                self.speed = self.speed * 0.8
+            elif angle_theta < 60:
+                self.speed = self.speed * 0.5
+            else:
+                self.speed = self.speed * 0.2
+            self.speed_slowed = True
+
+            k0 = -1
+            self.position[0] += k0 * math.cos(math.radians(360 - self.carangle)) * 8 * self.speed * np.sin(np.radians(angle_theta))
+            self.position[1] += k0 * math.sin(math.radians(360 - self.carangle)) * 8  * self.speed * np.sin(np.radians(angle_theta))
+            # change angle
+            if nr == 1:  # left top
+                kt = -1
+            else:  # right top
+                kt = 1
+            # Einstellen des Lenkwinkels auf 8 Grad multipliziert mit dem Koeffizienten.
+            turn_angle = 7 * np.sin(np.radians(2*angle_theta))+1     #   np.sin(np.radians(2*(360-angle_theta)))+0.1
+            self.carangle += kt * turn_angle
+            self.carangle = (self.carangle % 360 + 360) % 360  # limit carangle 0~360
+
+        elif nr in [3, 4] and self.speed < 0:
+            self.speed = 0
