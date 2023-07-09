@@ -1,0 +1,14 @@
+    def ruckfahren(self, fwert):
+        if self.power > 0:
+            self.power = -30
+            self.speed=self.Geschwindigkeit(self.power)
+            self.delay_ms(10)
+            self.power = 0
+            self.speed=self.Geschwindigkeit(self.power)
+            self.delay_ms(10)
+        self.power = fwert
+    def delay_ms(self,milliseconds):
+        clock = pygame.time.Clock()
+        start_time = pygame.time.get_ticks()
+        while pygame.time.get_ticks() - start_time < milliseconds:
+            clock.tick(100)
