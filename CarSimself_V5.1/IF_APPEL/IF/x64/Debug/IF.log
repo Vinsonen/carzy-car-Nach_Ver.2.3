@@ -1,0 +1,6 @@
+﻿  IF.c
+  myfunktion.c
+C:\Users\Vinson\Desktop\毕业论文\模拟环境 终\CarSimself_V4.0\IF\IF\myfunktion.c(164,8): warning C4013: “abs”未定义；假设外部返回 int
+  正在生成代码...
+    正在创建库 C:\Users\Vinson\Desktop\毕业论文\模拟环境 终\CarSimself_V4.0\IF\x64\Debug\IF.lib 和对象 C:\Users\Vinson\Desktop\毕业论文\模拟环境 终\CarSimself_V4.0\IF\x64\Debug\IF.exp
+  IF.vcxproj -> C:\Users\Vinson\Desktop\毕业论文\模拟环境 终\CarSimself_V4.0\IF\x64\Debug\IF.dll
